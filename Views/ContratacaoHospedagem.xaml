@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiAppHotel.Views.ContratacaoHospedagem"
+             Title="ContratacaoHospedagem"
+             NavigationPage.HasNavigationBar="False"
+             BackgroundColor="#FFFFFF">
+
+    <VerticalStackLayout VerticalOptions="CenterAndExpand"
+                         Padding="20"
+                         Spacing="20">
+
+        <!-- Topo -->
+        <Label Text="VALOR DA DIÁRIA"
+               FontFamily="Karla"
+               FontSize="30"
+               FontAttributes="Bold"
+               TextColor="#2C3E50"
+               HorizontalOptions="Center"/>
+
+        <!-- Card Principal -->
+        <Frame Padding="20"
+               CornerRadius="20"
+               BackgroundColor="#FFFFFF"
+               HasShadow="True"
+               BorderColor="Transparent">
+
+            <VerticalStackLayout Spacing="20">
+
+                <!-- Adultos e Crianças -->
+                <Grid RowDefinitions="Auto, Auto"
+                      ColumnDefinitions="*, *, 2*"
+                      ColumnSpacing="10"
+                      BackgroundColor="#FFFFFF">
+
+                    <Label Grid.Row="0" Grid.Column="0"
+                           Text="Adultos:"
+                           FontAttributes="Bold"
+                           TextColor="#2C3E50"/>
+
+                    <Label Grid.Row="0" Grid.Column="1"
+                           TextColor="#2C3E50"
+                           Text="{Binding Value}"
+                           BindingContext="{x:Reference stp_adultos}"/>
+
+                    <Stepper Grid.Row="0" Grid.Column="2"
+                             x:Name="stp_adultos"
+                             Minimum="0"
+                             Maximum="10"
+                             Increment="1"
+                             BackgroundColor="#F8F8F8"
+                             HorizontalOptions="FillAndExpand"/>
+
+                    <Label Grid.Row="1" Grid.Column="0"
+                           Text="Crianças:"
+                           FontAttributes="Bold"
+                           TextColor="#2C3E50"/>
+
+                    <Label Grid.Row="1" Grid.Column="1"
+                           TextColor="#2C3E50"
+                           Text="{Binding Value}"
+                           BindingContext="{x:Reference stp_criancas}"/>
+
+                    <Stepper Grid.Row="1" Grid.Column="2"
+                             x:Name="stp_criancas"
+                             Minimum="0"
+                             Maximum="10"
+                             Increment="1"
+                             BackgroundColor="#F8F8F8"
+                             HorizontalOptions="FillAndExpand"/>
+                </Grid>
+
+                <Label Text="Escolha a Suíte" 
+                       FontAttributes="Bold"
+                       TextColor="#2C3E50"/>
+
+                <!-- Picker dentro de Frame para bordas arredondadas -->
+                <Frame BackgroundColor="#FFFFFF" 
+                       Padding="0"
+                       CornerRadius="10"
+                       HasShadow="True"
+                       BorderColor="Transparent"
+                       Margin="0,5">
+                    <Picker x:Name="pck_quarto"
+                            Title="Acomodações:" 
+                            TextColor="#2C3E50"
+                            BackgroundColor="Transparent"/>
+                </Frame>
+
+                <!-- Duração da estadia -->
+                <Frame Padding="15" 
+                       Margin="0"
+                       CornerRadius="15"
+                       BackgroundColor="#FFFFFF"
+                       BorderColor="Transparent">
+
+                    <Frame.Shadow>
+                        <Shadow 
+                            Brush="Black"
+                            Offset="5,5"
+                            Radius="10"
+                            Opacity="0.3"    
+                        />
+                    </Frame.Shadow>
+                    
+                    
+                    
+                    <VerticalStackLayout Spacing="15">
+                        <Label Text="Duração da Estadia" 
+                               FontAttributes="Bold"
+                               TextColor="#2C3E50"/>
+
+                        <HorizontalStackLayout Spacing="10" VerticalOptions="Center">
+                            <Label Text="Check-in:"
+                                   WidthRequest="80"
+                                   TextColor="#2C3E50"/>
+                            <DatePicker x:Name="dtpck_checkin"
+                                        Format="dd/MM/yyyy"
+                                        BackgroundColor="#F8F8F8"
+                                        TextColor="#2C3E50"
+                                        HorizontalOptions="FillAndExpand"/>
+                        </HorizontalStackLayout>
+
+                        <HorizontalStackLayout Spacing="10" VerticalOptions="Center">
+                            <Label Text="Check-out:"
+                                   WidthRequest="80"
+                                   TextColor="#2C3E50"/>
+                            <DatePicker x:Name="dtpck_checkout"
+                                        Format="dd/MM/yyyy" 
+                                        BackgroundColor="#F8F8F8"
+                                        TextColor="#2C3E50"
+                                        HorizontalOptions="FillAndExpand"/>
+                        </HorizontalStackLayout>
+
+                    </VerticalStackLayout>
+                    
+                </Frame>
+
+                <!-- Botão minimalista dentro de Frame para sombra -->
+                <Frame CornerRadius="12"
+                       Padding="0"
+                       HasShadow="True"
+                       BackgroundColor="#FFFFFF"
+                       BorderColor="Transparent"
+                       HeightRequest="50">
+                    <Button Text="Avançar" 
+                            BackgroundColor="#212121"
+                            TextColor="White"
+                            FontAttributes="Bold"
+                            CornerRadius="12"/>
+                </Frame>
+
+            </VerticalStackLayout>
+        </Frame>
+    </VerticalStackLayout>
+</ContentPage>
