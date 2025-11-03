@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiAppHotel.Views.Sobre"
+             Title="Sobre"
+             BackgroundColor="#F5F5F5"
+             NavigationPage.HasNavigationBar="True">
+
+    <ScrollView>
+        <VerticalStackLayout VerticalOptions="CenterAndExpand"
+                         Padding="20"
+                         Spacing="20">
+
+            <Label Text="Sobre o Aplicativo"
+                   FontFamily="Karla"
+                   FontSize="28"
+                   FontAttributes="Bold"
+                   TextColor="#212121"
+                   HorizontalOptions="Center"
+                   HorizontalTextAlignment="Center"/>
+
+            <Frame Padding="20"
+                   BackgroundColor="White"
+                   CornerRadius="15"
+                   HasShadow="True"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center">
+
+                <VerticalStackLayout Spacing="15">
+                    <Label Text="Desenvolvedor: Matheus Massuda"
+                           FontFamily="Karla"
+                           FontSize="18"
+                           TextColor="#212121"
+                           HorizontalTextAlignment="Center"/>
+
+                    <Label Text="Ano de desenvolvimento: 2025"
+                           FontFamily="Karla"
+                           FontSize="18"
+                           TextColor="#212121"
+                           HorizontalTextAlignment="Center"/>
+
+                    <Label Text="Este aplicativo foi desenvolvido utilizando .NET MAUI, seguindo o estilo do site pessoal do desenvolvedor, com foco em design minimalista e responsivo."
+                           FontFamily="Karla"
+                           FontSize="16"
+                           TextColor="#424242"
+                           HorizontalTextAlignment="Start"
+                           LineBreakMode="WordWrap"/>
+                </VerticalStackLayout>
+            </Frame>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
