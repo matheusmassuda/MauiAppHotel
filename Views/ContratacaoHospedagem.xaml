@@ -4,13 +4,14 @@
              x:Class="MauiAppHotel.Views.ContratacaoHospedagem"
              Title="ContratacaoHospedagem"
              NavigationPage.HasNavigationBar="False"
-             BackgroundColor="#FFFFFF">
+             BackgroundColor="white">
 
-    <VerticalStackLayout VerticalOptions="CenterAndExpand"
+    <!-- Todo o conteúdo da página -->
+    <VerticalStackLayout VerticalOptions="CenterAndExpand" 
                          Padding="20"
                          Spacing="20">
 
-        <!-- Topo -->
+        <!-- Cabeçalho -->
         <Label Text="VALOR DA DIÁRIA"
                FontFamily="Karla"
                FontSize="30"
@@ -20,10 +21,10 @@
 
         <!-- Card Principal -->
         <Frame Padding="20"
-               CornerRadius="20"
+               CornerRadius="0"
                BackgroundColor="#FFFFFF"
                HasShadow="True"
-               BorderColor="Transparent">
+               BorderColor="#d7d7d7">
 
             <VerticalStackLayout Spacing="20">
 
@@ -48,8 +49,7 @@
                              Minimum="0"
                              Maximum="10"
                              Increment="1"
-                             BackgroundColor="#F8F8F8"
-                             HorizontalOptions="FillAndExpand"/>
+                             BackgroundColor="#cccccc" />
 
                     <Label Grid.Row="1" Grid.Column="0"
                            Text="Crianças:"
@@ -66,90 +66,81 @@
                              Minimum="0"
                              Maximum="10"
                              Increment="1"
-                             BackgroundColor="#F8F8F8"
-                             HorizontalOptions="FillAndExpand"/>
+                             BackgroundColor="#cccccc" />
                 </Grid>
 
-                <Label Text="Escolha a Suíte" 
-                       FontAttributes="Bold"
-                       TextColor="#2C3E50"/>
-
-                <!-- Picker dentro de Frame para bordas arredondadas -->
-                <Frame BackgroundColor="#FFFFFF" 
-                       Padding="0"
+                <!-- Escolha da suíte -->
+                <Frame BackgroundColor="#FFFFFF"
+                       Padding="10"
                        CornerRadius="10"
                        HasShadow="True"
-                       BorderColor="Transparent"
-                       Margin="0,5">
-                    <Picker x:Name="pck_quarto"
-                            Title="Acomodações:" 
-                            TextColor="#2C3E50"
-                            BackgroundColor="Transparent"/>
+                       BorderColor="Transparent">
+
+                    <VerticalStackLayout>
+                        <Label Text="Escolha a Suíte" 
+                               FontAttributes="Bold"
+                               TextColor="#2C3E50"/>
+
+                        <Picker x:Name="pck_quarto"
+                                Title="Acomodações:"
+                                TextColor="#2C3E50"
+                                TitleColor="#888"
+                                BackgroundColor="#d7d7d7"
+                                ItemDisplayBinding="{Binding Descricao}" />
+                    </VerticalStackLayout>
                 </Frame>
 
                 <!-- Duração da estadia -->
                 <Frame Padding="15" 
-                       Margin="0"
                        CornerRadius="15"
                        BackgroundColor="#FFFFFF"
                        BorderColor="Transparent">
-
                     <Frame.Shadow>
                         <Shadow 
                             Brush="Black"
                             Offset="5,5"
                             Radius="10"
-                            Opacity="0.3"    
-                        />
+                            Opacity="0.3"/>
                     </Frame.Shadow>
-                    
-                    
-                    
+
                     <VerticalStackLayout Spacing="15">
                         <Label Text="Duração da Estadia" 
                                FontAttributes="Bold"
                                TextColor="#2C3E50"/>
 
-                        <HorizontalStackLayout Spacing="10" VerticalOptions="Center">
-                            <Label Text="Check-in:"
-                                   WidthRequest="80"
-                                   TextColor="#2C3E50"/>
+                        <HorizontalStackLayout Spacing="10">
+                            <Label Text="Check-in:" WidthRequest="80" TextColor="#2C3E50"/>
                             <DatePicker x:Name="dtpck_checkin"
+                                        DateSelected="dtpck_checkin_DateSelected"
                                         Format="dd/MM/yyyy"
                                         BackgroundColor="#F8F8F8"
-                                        TextColor="#2C3E50"
-                                        HorizontalOptions="FillAndExpand"/>
+                                        TextColor="#2C3E50"/>
                         </HorizontalStackLayout>
 
-                        <HorizontalStackLayout Spacing="10" VerticalOptions="Center">
-                            <Label Text="Check-out:"
-                                   WidthRequest="80"
-                                   TextColor="#2C3E50"/>
+                        <HorizontalStackLayout Spacing="10">
+                            <Label Text="Check-out:" WidthRequest="80" TextColor="#2C3E50"/>
                             <DatePicker x:Name="dtpck_checkout"
-                                        Format="dd/MM/yyyy" 
+                                        Format="dd/MM/yyyy"
                                         BackgroundColor="#F8F8F8"
-                                        TextColor="#2C3E50"
-                                        HorizontalOptions="FillAndExpand"/>
+                                        TextColor="#2C3E50"/>
                         </HorizontalStackLayout>
-
                     </VerticalStackLayout>
-                    
                 </Frame>
 
-                <!-- Botão minimalista dentro de Frame para sombra -->
+                <!-- Botão -->
                 <Frame CornerRadius="12"
                        Padding="0"
                        HasShadow="True"
                        BackgroundColor="#FFFFFF"
                        BorderColor="Transparent"
                        HeightRequest="50">
-                    <Button Text="Avançar" 
+                    <Button Text="Avançar"
+                            Clicked="Button_Clicked"
                             BackgroundColor="#212121"
                             TextColor="White"
                             FontAttributes="Bold"
-                            CornerRadius="12"/>
+                            CornerRadius="10"/>
                 </Frame>
-
             </VerticalStackLayout>
         </Frame>
     </VerticalStackLayout>

@@ -2,11 +2,139 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MauiAppHotel.Views.HospedagemContratada"
-             Title="HospedagemContratada">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
+             NavigationPage.HasNavigationBar="False"
+             BackgroundColor="white">
+    
+    <VerticalStackLayout Padding="20"
+                         Spacing="10"
+                         VerticalOptions="CenterAndExpand">
+
+        <Label Text="Suíte Contratada"
+               FontFamily="Karla"
+               FontSize="30"
+               FontAttributes="Bold"
+               TextColor="#2C3E50"
+               HorizontalOptions="Center"
+               HorizontalTextAlignment="Center"/>
+
+        <!-- Frame Maior que envolve todos os outros frames -->
+        <Frame Padding="20"
+               CornerRadius="0"
+               BackgroundColor="#FFFFFF"
+               HasShadow="True"
+               BorderColor="#d7d7d7">
+
+            <VerticalStackLayout Spacing="15">
+
+                <!-- Frame Adultos e Crianças -->
+                <Frame Padding="20"
+                       CornerRadius="20"
+                       BackgroundColor="#FFFFFF"
+                       HasShadow="True"
+                       BorderColor="Transparent">
+
+                    <HorizontalStackLayout Margin="10">
+
+                        <HorizontalStackLayout>
+                            <Label Text="Adultos: " 
+                                   FontFamily="Karla-ExtraBold"
+                                   TextColor="#2C3E50"/>
+                            <Label Text=" 2" 
+                                   FontFamily="Karla-Medium"
+                                   TextColor="#2C3E50" />
+                        </HorizontalStackLayout>
+
+                        <HorizontalStackLayout>
+                            <Label Text="   Crianças: " 
+                                   FontFamily="Karla-ExtraBold"
+                                   TextColor="#2C3E50"/>
+                            <Label Text=" 2" 
+                                   FontFamily="Karla-Medium"
+                                   TextColor="#2C3E50" />
+                        </HorizontalStackLayout>
+
+                    </HorizontalStackLayout>
+                </Frame>
+
+                <!--Frame Datas-->
+                <Frame Margin="10"
+                       CornerRadius="0"
+                       BackgroundColor="#d7d7d7"
+                       BorderColor="Transparent">
+                    
+                    <Grid ColumnDefinitions="*, *, *"
+                          RowDefinitions="Auto, Auto"
+                          >
+                        
+                        <Label Grid.Row="0" Grid.Column="0" Text="Check-in " 
+                               TextColor="#212121"
+                               FontFamily="Karla-Light"
+                               HorizontalOptions="Start"/>
+                        <Label Grid.Row="0" Grid.Column="1" Text="Check-out "
+                               TextColor="#212121"
+                               FontFamily="Karla-Light"
+                               HorizontalOptions="Center"/>
+                        <Label Grid.Row="0" Grid.Column="2" Text="Estadia "
+                               TextColor="#212121"
+                               FontFamily="Karla-Light"
+                               HorizontalOptions="End"/>
+
+                        <Label Grid.Row="1" Grid.Column="0" Text="27/05/2025"
+                               FontSize="11"
+                               TextColor="#212121"
+                               FontFamily="Karla-ExtraBold"
+                               HorizontalOptions="Start"/>
+                        <Label Grid.Row="1" Grid.Column="1" Text="27/05/2025"
+                               FontSize="11"
+                               TextColor="#212121"
+                               FontFamily="Karla-ExtraBold"
+                               HorizontalOptions="Center"/>
+                        <Label Grid.Row="2" Grid.Column="2" Text="27/05/2025"
+                               FontSize="11"
+                               TextColor="#212121"
+                               FontFamily="Karla-ExtraBold"
+                               HorizontalOptions="End"/>
+                    </Grid>
+                </Frame>
+
+                <!--Frame Valores R$-->
+                <Frame Margin="10"
+                       CornerRadius="0"
+                       BackgroundColor="#d7d7d7"
+                       BorderColor="Transparent">
+
+                    <HorizontalStackLayout>
+                        <Label Text="Valor Total: "
+                               TextColor="#212121"
+                               FontFamily="Karla-Regular"/>
+                        <Label Text="  R$ 7580,00"
+                               TextColor="#212121"
+                               FontFamily="Karla-ExtraBold"/>
+                    </HorizontalStackLayout>
+
+                </Frame>
+
+            </VerticalStackLayout>
+        </Frame>
+
+        <Frame CornerRadius="10"
+               Padding="0"
+               HasShadow="True"
+               BackgroundColor="#FFFFFF"
+               BorderColor="Transparent"
+               HeightRequest="50">
+            
+            <Button Text="Votlar"
+                    Clicked="Button_Clicked"
+                    BackgroundColor="#212121"
+                    TextColor="White"
+                    FontAttributes="Bold"
+                    CornerRadius="10"/>
+            
+        </Frame>
+
+
+
     </VerticalStackLayout>
+
 </ContentPage>
