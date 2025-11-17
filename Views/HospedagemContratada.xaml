@@ -9,7 +9,7 @@
                          Spacing="10"
                          VerticalOptions="CenterAndExpand">
 
-        <Label Text="Suíte Contratada"
+        <Label Text="{Binding QuartoSelecionado.Descricao}"
                FontFamily="Karla"
                FontSize="30"
                FontAttributes="Bold"
@@ -33,23 +33,23 @@
                        HasShadow="True"
                        BorderColor="Transparent">
 
-                    <HorizontalStackLayout Margin="10">
+                    <HorizontalStackLayout Margin="10" HorizontalOptions="CenterAndExpand">
 
-                        <HorizontalStackLayout>
-                            <Label Text="Adultos: " 
-                                   FontFamily="Karla-ExtraBold"
-                                   TextColor="#2C3E50"/>
-                            <Label Text=" 2" 
+                        <HorizontalStackLayout HorizontalOptions="CenterAndExpand">
+                            <Label Text="Adultos:  " 
                                    FontFamily="Karla-Medium"
+                                   TextColor="#2C3E50"/>
+                            <Label Text="{ Binding QntAdultos}" 
+                                   FontFamily="Karla-ExtraBold"
                                    TextColor="#2C3E50" />
                         </HorizontalStackLayout>
 
                         <HorizontalStackLayout>
-                            <Label Text="   Crianças: " 
-                                   FontFamily="Karla-ExtraBold"
-                                   TextColor="#2C3E50"/>
-                            <Label Text=" 2" 
+                            <Label Text="   Crianças:  " 
                                    FontFamily="Karla-Medium"
+                                   TextColor="#2C3E50"/>
+                            <Label Text="{ Binding QntCriancas}" 
+                                   FontFamily="Karla-ExtraBold"
                                    TextColor="#2C3E50" />
                         </HorizontalStackLayout>
 
@@ -79,17 +79,17 @@
                                FontFamily="Karla-Light"
                                HorizontalOptions="End"/>
 
-                        <Label Grid.Row="1" Grid.Column="0" Text="27/05/2025"
+                        <Label Grid.Row="1" Grid.Column="0" Text="{Binding DataCheckIn, StringFormat='{}{0:dd/MM/yyyy}'}"
                                FontSize="11"
                                TextColor="#212121"
                                FontFamily="Karla-ExtraBold"
                                HorizontalOptions="Start"/>
-                        <Label Grid.Row="1" Grid.Column="1" Text="27/05/2025"
+                        <Label Grid.Row="1" Grid.Column="1" Text="{Binding DataCheckOut, StringFormat='{}{0:dd/MM/yyyy}'}"
                                FontSize="11"
                                TextColor="#212121"
                                FontFamily="Karla-ExtraBold"
                                HorizontalOptions="Center"/>
-                        <Label Grid.Row="2" Grid.Column="2" Text="27/05/2025"
+                        <Label Grid.Row="2" Grid.Column="2" Text="{Binding Estadia}"
                                FontSize="11"
                                TextColor="#212121"
                                FontFamily="Karla-ExtraBold"
@@ -103,11 +103,11 @@
                        BackgroundColor="#d7d7d7"
                        BorderColor="Transparent">
 
-                    <HorizontalStackLayout>
+                    <HorizontalStackLayout HorizontalOptions="CenterAndExpand">
                         <Label Text="Valor Total: "
                                TextColor="#212121"
                                FontFamily="Karla-Regular"/>
-                        <Label Text="  R$ 7580,00"
+                        <Label Text="{Binding ValorTotal, StringFormat='{}{0:c}'}"
                                TextColor="#212121"
                                FontFamily="Karla-ExtraBold"/>
                     </HorizontalStackLayout>
